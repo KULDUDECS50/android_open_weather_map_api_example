@@ -1,14 +1,11 @@
 package com.wbjackson.youtubeweatherapp;
 
-import android.support.annotation.DrawableRes;
-
 /**
- * Utility class that returns the proper icon given a {@link CurrentWeather#conditionId}
- * mapping created with the assistance of https://erikflowers.github.io/weather-icons/api-list.html
+ * Utility class that returns the proper icon given a weather condition ID.
+ * Mapping created with the assistance of https://erikflowers.github.io/weather-icons/api-list.html
  */
 public class CurrentWeatherUtils {
 
-    @DrawableRes
     public static int getWeatherIconResId(final int weatherConditionId) {
         switch (weatherConditionId) {
             case 200:
@@ -43,7 +40,7 @@ public class CurrentWeatherUtils {
             case 522:
             case 531:
             case 701:
-                return R.drawable.ic_wi_rain;
+                return (R.drawable.ic_wi_rain);
             case 600:
             case 601:
             case 602:

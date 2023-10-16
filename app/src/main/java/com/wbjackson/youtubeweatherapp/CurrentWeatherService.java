@@ -1,9 +1,9 @@
 package com.wbjackson.youtubeweatherapp;
 
 import android.app.Activity;
-import android.support.annotation.MainThread;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -11,21 +11,17 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Not an actual {@link android.app.Service} because we are using {@link Volley}
- */
 public class CurrentWeatherService {
 
     private static final String TAG = CurrentWeatherService.class.getSimpleName();
 
     private static final String URL = "https://api.openweathermap.org/data/2.5/weather";
     private static final String CURRENT_WEATHER_TAG = "CURRENT_WEATHER";
-    private static final String API_KEY = "YOUR API KEY HERE";
+    private static final String API_KEY = "4865aa5e07d2786c813068d7bb327ee5";
 
     private RequestQueue queue;
 
@@ -34,10 +30,8 @@ public class CurrentWeatherService {
     }
 
     public interface CurrentWeatherCallback {
-        @MainThread
         void onCurrentWeather(@NonNull final CurrentWeather currentWeather);
 
-        @MainThread
         void onError(@Nullable Exception exception);
     }
 
